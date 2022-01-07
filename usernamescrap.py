@@ -1,4 +1,6 @@
 from scrapwanttojson import get_account
+from scrapwithfilter2 import scraping_instagram
+import time
 
 username_list = ['Gypsea_Lust',
     'Loki the Wolfdog',
@@ -30,5 +32,15 @@ username_list = ['Gypsea_Lust',
     'BeMyTravelMuse',
     'FreyaDowson']
     
-get_account(username_list)
+# get_account(username_list)
+
+#new scrap method
+for username in username_list:
+    success = scraping_instagram(username)
+    if success:
+        print(username, '...ok')
+    else:
+        print(username, '...failed')
+
+    time.sleep(2)
 
